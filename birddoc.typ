@@ -29,10 +29,11 @@
   set page(
     paper: "a4",
     margin: 2.5cm,
-    // odd pages: author in the header, even pages: title in the header
+    // based on the physical page, so counter resets don't matter:
+    // left-hand (even) pages show the author, right-hand (odd) pages the title
     header: context {
-      let n = counter(page).get().first()
-      align(center, if calc.odd(n) { author } else { title })
+      let left-page = calc.even(here().page())
+      align(center, if left-page { author } else { title })
     },
     footer: context align(center, counter(page).display()),
   )

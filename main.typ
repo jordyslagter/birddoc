@@ -24,6 +24,8 @@
   #include "mainmatter/01-methode.typ"
 ]
 
+#bibliography("bibliography.bib", title: "Bronnen", style: "apa")
+
 #appendix[
   #include "appendix/00-bijlage1.typ"
 ]
